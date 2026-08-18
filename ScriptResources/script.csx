@@ -7,8 +7,9 @@ string resourcePath = Path.GetDirectoryName(ScriptPath);
 GlobalDecompileContext globalDecompileContext = new(Data);
 Underanalyzer.Decompiler.IDecompileSettings decompileSettings = Data.ToolInfo.DecompilerSettings;
 
-SyncBinding("Strings, Variables, Functions", true);
-UndertaleModLib.Compiler.CodeImportGroup importGroup = new(Data);
+EnsureDataLoaded(); // v1.1.0 : remplace SyncBinding(...), API supprimée des scripts UTMT
+// Motif officiel de cette version d'UTMT (voir FindAndReplace.csx / ImportGML.csx livrés avec l'outil)
+CodeImportGroup importGroup = new(Data, null, Data.ToolInfo.DecompilerSettings) { MainThreadAction = MainThreadAction };
 
 CreateScriptFromResource("gml_GlobalScript_array_contains_manual");
 CreateScriptFromResource("gml_GlobalScript_audio_play_sound_logged");
@@ -180,7 +181,7 @@ if (!roomGameObjects.Any(inst => inst.ObjectDefinition.Name?.Content == "obj_sav
 }
 await Task.Run(() => UpdateProgressStatus("Final code import..."));
 importGroup.Import();
-DisableAllSyncBindings();
+// v1.1.0 : DisableAllSyncBindings() retiré, API supprimée des scripts UTMT (rien à désactiver désormais)
 
 StopProgressBarUpdater();
 HideProgressBar();
