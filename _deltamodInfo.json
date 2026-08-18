@@ -3,7 +3,7 @@
         "name": "Deltarune Savestates",
         "version": "1.0.5",
         "description": "Adds savestates to Deltarune. Use 0-9 to pick a slot, S to save, and L to load. Hold Tab for savestate rooms.",
-        "author": ["Spinyspinr"],
+        "author": ["Spinyspinr", "Undi", "Alcyb"],
         "demoMod": false
     },
     "neededFiles": [
