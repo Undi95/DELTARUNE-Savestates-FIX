@@ -1,0 +1,4 @@
+<patch type="xdelta" patch="./chapter1_windows.xdelta" to="./chapter1_windows/data.win"/>
+<patch type="xdelta" patch="./chapter2_windows.xdelta" to="./chapter2_windows/data.win"/>
+<patch type="xdelta" patch="./chapter3_windows.xdelta" to="./chapter3_windows/data.win"/>
+<patch type="xdelta" patch="./chapter4_windows.xdelta" to="./chapter4_windows/data.win"/>
